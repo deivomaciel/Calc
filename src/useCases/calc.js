@@ -21,7 +21,7 @@ const calculateExpression = expression => {
   const expressionToCalculate = expression
   
   const operators = {
-    '*'(numberA, numberB) {
+    'x'(numberA, numberB) {
       return operations.multiply(numberA, numberB)
     },
 
@@ -39,7 +39,7 @@ const calculateExpression = expression => {
   }
   
   for(let i = 0; i < expressionToCalculate.length - 1; i++) {
-    if(expressionToCalculate[i] == '*' || expressionToCalculate[i] == '/') {
+    if(expressionToCalculate[i] == 'x' || expressionToCalculate[i] == '/') {
       expressionToCalculate[i - 1] = operators[expressionToCalculate[i]](Number(expressionToCalculate[i - 1]), Number(expressionToCalculate[i + 1]))
       expressionToCalculate.splice(i, 1)
       expressionToCalculate.splice(i, 1)
