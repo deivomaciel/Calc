@@ -5,7 +5,10 @@ import "./app.css"
 function App() {
   let [iqualFlag, setIqualFlag] = useState(false)
   let [expression, setExpression] = useState('')
-  const addCharOnEXpression = char => setExpression(expression += char)
+  const addCharOnEXpression = char => {
+    setExpression(expression += char)
+    setIqualFlag(false)
+  }
   
   const showResult = () => {
     if(expression.length > 1) {
