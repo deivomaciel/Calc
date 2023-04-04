@@ -10,7 +10,13 @@ function App() {
   const showResult = () => {
     if(expression.length > 1) {
       const expressionArray = calc.filterNumbers(expression)
-      setExpression(calc.calculateExpression(expressionArray))
+      const result = calc.calculateExpression(expressionArray)
+      
+      if(!Number.isInteger(result) && String(result).length > 4) {
+        setExpression(result.toFixed(4))
+      } else {
+        setExpression(result)
+      }
       setIqualFlag(true)
     }
   }

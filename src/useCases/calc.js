@@ -55,7 +55,7 @@ const calculateExpression = expression => {
       i = 0
     }
   }
-  return expressionToCalculate[0]
+  return Number(expressionToCalculate[0])
 }
 
 export const calc = {
